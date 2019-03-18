@@ -6,6 +6,11 @@ class Profile(models.Model):
     """Профиль пользователя."""
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
 
+    def delete(self, *args, **kwargs):
+        self.user.delete()
+        return super(self.__class__, self).delete(*args, **kwargs)
+    
+
 class PhoneCode(models.Model):
     phone = models.PositiveIntegerField(validators=[MinValueValidator(70000000000), MaxValueValidator(79999999999)], unique=True)
     code = models.PositiveIntegerField(validators=[MinValueValidator(1000), MaxValueValidator(9999)])

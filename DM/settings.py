@@ -25,7 +25,7 @@ SECRET_KEY = 'v+mnyes^k@(qshkh(i0=j(4zv=2r0o6=52&nl@9vs&3d)mx)6*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['dress-me.icu']
+ALLOWED_HOSTS = ['dress-me.icu','127.0.0.1']
 
 
 # Application definition
