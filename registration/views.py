@@ -1,70 +1,17 @@
 from rest_framework.views import APIView
-from .models import Profile
+from .models import Profile, PhoneCode
 from django.http import JsonResponse
-from registration.serializers import ProfileSerializer
+from registration.serializers import ProfileSerializer, PhoneCodeSerializer
 from django.contrib.auth.models import User
-from rest_framework.authtoken.views import ObtainAuthToken
 from django.contrib.auth import authenticate, logout
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.authtoken.models import Token
-
-class ProfileList(APIView):
-    permission_classes = (AllowAny,)
-
-    def get(self, request, format=None):
-        data = {"detail": "You are not authorize"}
-        profiles = Profile.objects.all()
-        serializer = ProfileSerializer(profiles, many=True)
-        if request.user.is_authenticated:
-            return JsonResponse(serializer.data, safe=False)
-        else:
-            return JsonResponse(data, safe=False)
-
-    def post(self, request, format=None):
-        data = request.data
-        serializer = ProfileSerializer(data=data)
-        if serializer.is_valid():
-            serializer.save()
-            return JsonResponse(serializer.data, status=201)
-        return JsonResponse(serializer.errors, status=400)
+from rest_framework import viewsets, mixins
 
 
-class ProfileDetail(APIView):
-    def get(self, request, user_id, format=None):
-        profile_one = Profile.objects.get(user_id=user_id)
-        serializer = ProfileSerializer(profile_one)
-        return JsonResponse(serializer.data, safe=False)
-
-    def put(self, request, user_id, format=None):
-        data = request.data
-        profile_one = Profile.objects.get(user_id=user_id)
-        serializer = ProfileSerializer(profile_one, data=data)
-        if serializer.is_valid():
-            serializer.save()
-            return JsonResponse(serializer.data, status=201)
-        return JsonResponse(serializer.errors, status=400)
-
-    def patch(self, request, user_id, format=None):
-        data = request.data
-        current_user = request.user
-        if current_user.id == user_id:
-            profile_one = Profile.objects.get(user_id=user_id)
-            serializer = ProfileSerializer(profile_one, data=data, partial=True)
-            if serializer.is_valid():
-                serializer.save()
-                return JsonResponse(serializer.data, status=201)
-        return JsonResponse({"PTCH":False,"ERROR":"try to change another user"}, status=400)
-
-    def delete(self, request, user_id, format=None):
-        current_user = request.user
-        if current_user.id == user_id:
-            user_one = User.objects.get(id=user_id)
-            user_one.delete()
-            data = {
-                "user": "deleted"
-            }
-            return JsonResponse(data, safe=False)
-        return JsonResponse({"DEL":False,"ERROR":"try to delete another user"}, status=400)
+class Profiles(viewsets.ModelViewSet):
+    serializer_class = ProfileSerializer
+    queryset = Profile.objects.all()
 
 
 class CustomAuthToken(APIView):
@@ -82,4 +29,27 @@ class CustomAuthToken(APIView):
         return JsonResponse({'token': token.key})
 
 
+class SendSmsCode(APIView):
+    def post(self, request, format=None):
+        serializer = PhoneCodeSerializer(data=request.data)
 
+        if serializer.is_valid():
+            serializer.save()
+            return JsonResponse({"send":True}, status=201)
+        return JsonResponse({"send":False}, status=400)
+
+class CheckSmsCode(APIView):
+    def post(self, request, format=None):
+        phone=request.data['phone']
+        if request.data.get('code'):
+            code = request.data['code']
+        else:
+            return JsonResponse({"checked": False, 'error':'Need code'}, status=400)
+        valid_phone=PhoneCode.objects.filter(phone=phone)
+        if valid_phone:
+            phone_code=PhoneCode.objects.get(phone=phone)
+            if phone_code.code == code:
+                phone_code.is_verified=True
+                phone_code.save()
+                return JsonResponse({"checked":True}, status=200)
+        return JsonResponse({"checked":False}, status=400)
