@@ -7,12 +7,7 @@ from registration.smsc_api import *
 
 def send_sms(phone, text):
     smsc = SMSC()
-    balance = smsc.get_balance()
-    print(balance)
-    r = smsc.send_sms(str(phone), str(text), sender='DRESS-ME')
-    print(r)
-    balance = smsc.get_balance()
-    print(balance)
+    smsc.send_sms(str(phone), str(text), sender='DRESS-ME')
 
 
 class UserSerializer(serializers.ModelSerializer):
