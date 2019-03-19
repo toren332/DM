@@ -1,0 +1,497 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="375" height="812" viewBox="0 0 375 812">
+  <defs>
+    <pattern id="pattern" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" viewBox="0 0 256 256">
+      <image width="256" height="256" xlink:href="data:image/jpeg;base64,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"/>
+    </pattern>
+    <filter id="Кнопка_Настройки_" x="11.5" y="70.5" width="45" height="45" filterUnits="userSpaceOnUse">
+      <feOffset dy="1" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feFlood flood-color="#a9b3b7" flood-opacity="0.149"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle" x="284" y="691" width="88" height="43" filterUnits="userSpaceOnUse">
+      <feOffset dy="1" input="SourceAlpha"/>
+      <feGaussianBlur result="blur-2"/>
+      <feFlood flood-color="#898a8d"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle-2" x="96" y="691" width="182" height="43" filterUnits="userSpaceOnUse">
+      <feOffset dy="1" input="SourceAlpha"/>
+      <feGaussianBlur result="blur-3"/>
+      <feFlood flood-color="#898a8d"/>
+      <feComposite operator="in" in2="blur-3"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle-3" x="3" y="691" width="87" height="43" filterUnits="userSpaceOnUse">
+      <feOffset dy="1" input="SourceAlpha"/>
+      <feGaussianBlur result="blur-4"/>
+      <feFlood flood-color="#898a8d"/>
+      <feComposite operator="in" in2="blur-4"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle-4" x="330" y="637" width="42" height="43" filterUnits="userSpaceOnUse">
+      <feOffset dy="1" input="SourceAlpha"/>
+      <feGaussianBlur result="blur-5"/>
+      <feFlood flood-color="#898a8d"/>
+      <feComposite operator="in" in2="blur-5"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle-5" x="3" y="637" width="42" height="43" filterUnits="userSpaceOnUse">
+      <feOffset dy="1" input="SourceAlpha"/>
+      <feGaussianBlur result="blur-6"/>
+      <feFlood flood-color="#898a8d"/>
+      <feComposite operator="in" in2="blur-6"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle-6" x="285" y="637" width="32" height="43" filterUnits="userSpaceOnUse">
+      <feOffset dy="1" input="SourceAlpha"/>
+      <feGaussianBlur result="blur-7"/>
+      <feFlood flood-color="#898a8d"/>
+      <feComposite operator="in" in2="blur-7"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle-7" x="247" y="637" width="32" height="43" filterUnits="userSpaceOnUse">
+      <feOffset dy="1" input="SourceAlpha"/>
+      <feGaussianBlur result="blur-8"/>
+      <feFlood flood-color="#898a8d"/>
+      <feComposite operator="in" in2="blur-8"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle-8" x="209" y="637" width="32" height="43" filterUnits="userSpaceOnUse">
+      <feOffset dy="1" input="SourceAlpha"/>
+      <feGaussianBlur result="blur-9"/>
+      <feFlood flood-color="#898a8d"/>
+      <feComposite operator="in" in2="blur-9"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle-9" x="172" y="637" width="32" height="43" filterUnits="userSpaceOnUse">
+      <feOffset dy="1" input="SourceAlpha"/>
+      <feGaussianBlur result="blur-10"/>
+      <feFlood flood-color="#898a8d"/>
+      <feComposite operator="in" in2="blur-10"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle-10" x="134" y="637" width="32" height="43" filterUnits="userSpaceOnUse">
+      <feOffset dy="1" input="SourceAlpha"/>
+      <feGaussianBlur result="blur-11"/>
+      <feFlood flood-color="#898a8d"/>
+      <feComposite operator="in" in2="blur-11"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle-11" x="97" y="637" width="32" height="43" filterUnits="userSpaceOnUse">
+      <feOffset dy="1" input="SourceAlpha"/>
+      <feGaussianBlur result="blur-12"/>
+      <feFlood flood-color="#898a8d"/>
+      <feComposite operator="in" in2="blur-12"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle-12" x="59" y="637" width="32" height="43" filterUnits="userSpaceOnUse">
+      <feOffset dy="1" input="SourceAlpha"/>
+      <feGaussianBlur result="blur-13"/>
+      <feFlood flood-color="#898a8d"/>
+      <feComposite operator="in" in2="blur-13"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle-13" x="322" y="583" width="32" height="43" filterUnits="userSpaceOnUse">
+      <feOffset dy="1" input="SourceAlpha"/>
+      <feGaussianBlur result="blur-14"/>
+      <feFlood flood-color="#898a8d"/>
+      <feComposite operator="in" in2="blur-14"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle-14" x="284" y="583" width="32" height="43" filterUnits="userSpaceOnUse">
+      <feOffset dy="1" input="SourceAlpha"/>
+      <feGaussianBlur result="blur-15"/>
+      <feFlood flood-color="#898a8d"/>
+      <feComposite operator="in" in2="blur-15"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle-15" x="247" y="583" width="32" height="43" filterUnits="userSpaceOnUse">
+      <feOffset dy="1" input="SourceAlpha"/>
+      <feGaussianBlur result="blur-16"/>
+      <feFlood flood-color="#898a8d"/>
+      <feComposite operator="in" in2="blur-16"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle-16" x="209" y="583" width="32" height="43" filterUnits="userSpaceOnUse">
+      <feOffset dy="1" input="SourceAlpha"/>
+      <feGaussianBlur result="blur-17"/>
+      <feFlood flood-color="#898a8d"/>
+      <feComposite operator="in" in2="blur-17"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle-17" x="172" y="583" width="32" height="43" filterUnits="userSpaceOnUse">
+      <feOffset dy="1" input="SourceAlpha"/>
+      <feGaussianBlur result="blur-18"/>
+      <feFlood flood-color="#898a8d"/>
+      <feComposite operator="in" in2="blur-18"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle-18" x="134" y="583" width="32" height="43" filterUnits="userSpaceOnUse">
+      <feOffset dy="1" input="SourceAlpha"/>
+      <feGaussianBlur result="blur-19"/>
+      <feFlood flood-color="#898a8d"/>
+      <feComposite operator="in" in2="blur-19"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle-19" x="97" y="583" width="32" height="43" filterUnits="userSpaceOnUse">
+      <feOffset dy="1" input="SourceAlpha"/>
+      <feGaussianBlur result="blur-20"/>
+      <feFlood flood-color="#898a8d"/>
+      <feComposite operator="in" in2="blur-20"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle-20" x="59" y="583" width="32" height="43" filterUnits="userSpaceOnUse">
+      <feOffset dy="1" input="SourceAlpha"/>
+      <feGaussianBlur result="blur-21"/>
+      <feFlood flood-color="#898a8d"/>
+      <feComposite operator="in" in2="blur-21"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle-21" x="22" y="583" width="32" height="43" filterUnits="userSpaceOnUse">
+      <feOffset dy="1" input="SourceAlpha"/>
+      <feGaussianBlur result="blur-22"/>
+      <feFlood flood-color="#898a8d"/>
+      <feComposite operator="in" in2="blur-22"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle-22" x="340" y="529" width="32" height="43" filterUnits="userSpaceOnUse">
+      <feOffset dy="1" input="SourceAlpha"/>
+      <feGaussianBlur result="blur-23"/>
+      <feFlood flood-color="#898a8d"/>
+      <feComposite operator="in" in2="blur-23"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle-23" x="303" y="529" width="32" height="43" filterUnits="userSpaceOnUse">
+      <feOffset dy="1" input="SourceAlpha"/>
+      <feGaussianBlur result="blur-24"/>
+      <feFlood flood-color="#898a8d"/>
+      <feComposite operator="in" in2="blur-24"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle-24" x="265" y="529" width="32" height="43" filterUnits="userSpaceOnUse">
+      <feOffset dy="1" input="SourceAlpha"/>
+      <feGaussianBlur result="blur-25"/>
+      <feFlood flood-color="#898a8d"/>
+      <feComposite operator="in" in2="blur-25"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle-25" x="228" y="529" width="32" height="43" filterUnits="userSpaceOnUse">
+      <feOffset dy="1" input="SourceAlpha"/>
+      <feGaussianBlur result="blur-26"/>
+      <feFlood flood-color="#898a8d"/>
+      <feComposite operator="in" in2="blur-26"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle-26" x="190" y="529" width="32" height="43" filterUnits="userSpaceOnUse">
+      <feOffset dy="1" input="SourceAlpha"/>
+      <feGaussianBlur result="blur-27"/>
+      <feFlood flood-color="#898a8d"/>
+      <feComposite operator="in" in2="blur-27"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle-27" x="153" y="529" width="32" height="43" filterUnits="userSpaceOnUse">
+      <feOffset dy="1" input="SourceAlpha"/>
+      <feGaussianBlur result="blur-28"/>
+      <feFlood flood-color="#898a8d"/>
+      <feComposite operator="in" in2="blur-28"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle-28" x="115" y="529" width="32" height="43" filterUnits="userSpaceOnUse">
+      <feOffset dy="1" input="SourceAlpha"/>
+      <feGaussianBlur result="blur-29"/>
+      <feFlood flood-color="#898a8d"/>
+      <feComposite operator="in" in2="blur-29"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle-29" x="78" y="529" width="32" height="43" filterUnits="userSpaceOnUse">
+      <feOffset dy="1" input="SourceAlpha"/>
+      <feGaussianBlur result="blur-30"/>
+      <feFlood flood-color="#898a8d"/>
+      <feComposite operator="in" in2="blur-30"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle-30" x="40" y="529" width="32" height="43" filterUnits="userSpaceOnUse">
+      <feOffset dy="1" input="SourceAlpha"/>
+      <feGaussianBlur result="blur-31"/>
+      <feFlood flood-color="#898a8d"/>
+      <feComposite operator="in" in2="blur-31"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle-31" x="3" y="529" width="32" height="43" filterUnits="userSpaceOnUse">
+      <feOffset dy="1" input="SourceAlpha"/>
+      <feGaussianBlur result="blur-32"/>
+      <feFlood flood-color="#898a8d"/>
+      <feComposite operator="in" in2="blur-32"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <clipPath id="clip-_1.2_Home">
+      <rect width="375" height="812"/>
+    </clipPath>
+  </defs>
+  <g id="_1.2_Home" data-name="1.2 Home" clip-path="url(#clip-_1.2_Home)">
+    <rect width="375" height="812" fill="#fff"/>
+    <rect id="Фон" width="375" height="812" fill="#f5f5f9"/>
+    <g id="Новое_сообщение" data-name="Новое сообщение" transform="translate(0 -202)">
+      <rect id="Фон-2" data-name="Фон" width="375" height="141" transform="translate(0 582)" fill="#fff"/>
+      <g id="Кнопка_Микрофон_" data-name="Кнопка &quot;Микрофон&quot;" transform="translate(-274 176.598)">
+        <circle id="Ellipse_34" data-name="Ellipse 34" cx="20" cy="20" r="20" transform="translate(290 487)" fill="#c2c9cc"/>
+        <path id="Path_43" data-name="Path 43" d="M71.25,12.632a3.13,3.13,0,0,0,3.214-3.158V3.158a3.215,3.215,0,0,0-6.429,0V9.474A3.13,3.13,0,0,0,71.25,12.632Zm5.679-3.158a5.688,5.688,0,0,1-11.357,0H63.75a7.376,7.376,0,0,0,6.429,7.053V20h2.143V16.526A7.376,7.376,0,0,0,78.75,9.474H76.929Z" transform="translate(238.656 496.959)" fill="#fff"/>
+      </g>
+      <g id="Кнопка_Микрофон_2" data-name="Кнопка &quot;Микрофон&quot;" transform="translate(29 176.598)">
+        <circle id="Ellipse_34-2" data-name="Ellipse 34" cx="20" cy="20" r="20" transform="translate(290 487)" fill="#36c598"/>
+        <path id="Path_49" data-name="Path 49" d="M.009,32,0,37.95l12.857,1.7L0,41.35.009,47.3,18,39.65Z" transform="translate(303 467.703)" fill="#fff"/>
+      </g>
+      <text id="Start_typing_or_speaking..." data-name="Start typing or speaking..." transform="translate(16 617)" fill="#667078" font-size="16" font-family="SegoeUI-Light, Segoe UI" font-weight="300"><tspan x="0" y="0">Start typing or speaking...</tspan></text>
+    </g>
+    <rect id="Home_Indicator" data-name="Home Indicator" width="134" height="5" rx="2.5" transform="translate(121 798)" fill="#293540"/>
+    <g id="Страницы" transform="translate(-11 9)">
+      <rect id="Home_Indicator-2" data-name="Home Indicator" width="34" height="5" rx="2.5" transform="translate(171 764)" fill="#48525c"/>
+      <rect id="Home_Indicator-3" data-name="Home Indicator" width="15" height="5" rx="2.5" transform="translate(212 764)" fill="#dbdbde"/>
+    </g>
+    <text id="Hey_Lisa_what_can_i_help_you_with_" data-name="Hey Lisa,
+what can i help
+you with?" transform="translate(16 182)" fill="#293540" font-size="34" font-family="SegoeUI-Bold, Segoe UI" font-weight="700" letter-spacing="-0.001em"><tspan x="0" y="0">Hey Lisa,</tspan><tspan x="0" y="46">what can i help</tspan><tspan x="0" y="92">you with?</tspan></text>
+    <g id="Пользователь" transform="translate(4 13)">
+      <g id="Обводка" transform="translate(319 61)" fill="#f5f5f9" stroke="#36c598" stroke-width="1">
+        <circle cx="18" cy="18" r="18" stroke="none"/>
+        <circle cx="18" cy="18" r="17.5" fill="none"/>
+      </g>
+      <circle id="Фотография" cx="15" cy="15" r="15" transform="translate(322 64)" fill="url(#pattern)"/>
+    </g>
+    <g id="Настройки" transform="translate(0 13)">
+      <g transform="matrix(1, 0, 0, 1, 0, -13)" filter="url(#Кнопка_Настройки_)">
+        <circle id="Кнопка_Настройки_2" data-name="Кнопка &quot;Настройки&quot;" cx="18" cy="18" r="18" transform="translate(16 74)" fill="#fefefe"/>
+      </g>
+      <path id="Path_22" data-name="Path 22" d="M15.159,24.943a4.813,4.813,0,0,0-6.483,0l-.427.4-.427-.4a4.719,4.719,0,0,0-3.241-1.255A4.719,4.719,0,0,0,1.34,24.943a4.1,4.1,0,0,0,0,6.062l6.4,5.989a.715.715,0,0,0,.371.182.757.757,0,0,0,.138.012.731.731,0,0,0,.5-.194l6.4-5.989A4.1,4.1,0,0,0,15.159,24.943Z" transform="translate(25.693 48.804)" fill="#f35475"/>
+    </g>
+    <g id="Status_Bar" data-name="Status Bar">
+      <g id="Battery" transform="translate(336 17)">
+        <g id="Border" transform="translate(0 0.333)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1" opacity="0.35">
+          <rect width="22" height="11.333" rx="2.667" stroke="none"/>
+          <rect x="0.5" y="0.5" width="21" height="10.333" rx="2.167" fill="none"/>
+        </g>
+        <path id="Cap" d="M0,0V4A2.17,2.17,0,0,0,1.328,2,2.17,2.17,0,0,0,0,0" transform="translate(23 4)" opacity="0.4"/>
+        <rect id="Capacity" width="18" height="7.333" rx="1.333" transform="translate(2 2.333)"/>
+      </g>
+      <path id="Wifi" d="M7.637,10.966a.313.313,0,0,1-.221-.093l-2-2.016a.313.313,0,0,1,.01-.456,3.421,3.421,0,0,1,4.419,0,.311.311,0,0,1,.1.226.315.315,0,0,1-.094.23l-2,2.016A.308.308,0,0,1,7.637,10.966Zm3.508-3.538a.312.312,0,0,1-.214-.085,4.9,4.9,0,0,0-6.585,0,.312.312,0,0,1-.214.085.308.308,0,0,1-.22-.091L2.758,6.17a.322.322,0,0,1,0-.459,7.158,7.158,0,0,1,9.752,0,.322.322,0,0,1,.1.229.326.326,0,0,1-.094.23L11.364,7.337A.309.309,0,0,1,11.145,7.428ZM13.8,4.743a.3.3,0,0,1-.214-.087,8.64,8.64,0,0,0-11.907,0,.3.3,0,0,1-.214.087.308.308,0,0,1-.22-.091L.094,3.486a.322.322,0,0,1,0-.456,10.9,10.9,0,0,1,15.08,0,.325.325,0,0,1,.1.228.319.319,0,0,1-.094.229L14.023,4.652A.307.307,0,0,1,13.8,4.743Z" transform="translate(315.694 17.331)"/>
+      <path id="Cellular_Connection" data-name="Cellular Connection" d="M16,10.667H15a1,1,0,0,1-1-1V1a1,1,0,0,1,1-1h1a1,1,0,0,1,1,1V9.667A1,1,0,0,1,16,10.667Zm-4.667,0h-1a1,1,0,0,1-1-1V3.334a1,1,0,0,1,1-1h1a1,1,0,0,1,1,1V9.667A1,1,0,0,1,11.334,10.667Zm-4.667,0h-1a1,1,0,0,1-1-1v-4a1,1,0,0,1,1-1h1a1,1,0,0,1,1,1v4A1,1,0,0,1,6.666,10.667ZM2,10.667H1a1,1,0,0,1-1-1v-2a1,1,0,0,1,1-1H2a1,1,0,0,1,1,1v2A1,1,0,0,1,2,10.667Z" transform="translate(293.667 17.667)"/>
+      <g id="Time_Style" data-name="Time Style" transform="translate(21 9)">
+        <text id="_Time" data-name="↳ Time" transform="translate(0 5.33)" font-size="15" font-family="SegoeUI-Semibold, Segoe UI" font-weight="600" letter-spacing="-0.02em"><tspan x="14.116" y="16">9:41</tspan></text>
+      </g>
+    </g>
+    <g id="Keyboard_Alphabetic" data-name="Keyboard Alphabetic" transform="translate(0 521)">
+      <g id="Background">
+        <rect id="Background_background" data-name="Background background" width="375" height="291" fill="rgba(0,0,0,0)"/>
+        <rect id="background-2" data-name="background" width="375" height="291" fill="rgba(204,206,211,0.76)"/>
+      </g>
+      <g id="Home_Indicator-4" data-name="Home Indicator" transform="translate(0 257)">
+        <rect id="Home_Indicator-5" data-name="Home Indicator" width="134" height="5" rx="2.5" transform="translate(121 20)"/>
+      </g>
+      <g id="Keys" transform="translate(3 8)">
+        <path id="Dictation" d="M11.5,25h-8a.833.833,0,1,1,0-1.667h.03v-.011H6.677V20.79A7.547,7.547,0,0,1,0,13.282c0-.021,0-.04,0-.058v-.016c0-.01,0-.02,0-.029V11.268a.719.719,0,0,1-.006-.1.833.833,0,1,1,1.667,0c0,.024,0,.05,0,.086v2.29l0,.007c0,.014,0,.03,0,.045s0,.03,0,.044v.313h.016a5.87,5.87,0,0,0,5.645,5.377H7.66a5.869,5.869,0,0,0,5.647-5.377h.02V11.175h.006v-.01a.833.833,0,0,1,1.667,0,.668.668,0,0,1,0,.077v2.039h-.01a7.559,7.559,0,0,1-6.66,7.508v2.533h3.14v.011H11.5A.833.833,0,0,1,11.5,25Zm-4-7a4.344,4.344,0,0,1-2.679-.931,4.357,4.357,0,0,1-1.584-2.307,6.189,6.189,0,0,1-.206-1.344C3,12.951,3,12.465,3,11.994V6.986c0-.622,0-2.1,0-2.4a4.782,4.782,0,0,1,.234-1.344,4.426,4.426,0,0,1,8.527,0,6.4,6.4,0,0,1,.234,1.344c.022.387.011,1.712,0,2.424v.006c0,.288,0,.525,0,.654v4.263c0,.492,0,1-.028,1.487a6.3,6.3,0,0,1-.206,1.344,4.394,4.394,0,0,1-1.584,2.307A4.345,4.345,0,0,1,7.5,18Zm0-16.329a2.752,2.752,0,0,0-1.682.577,2.816,2.816,0,0,0-.994,1.487,4.416,4.416,0,0,0-.143.859c-.018.23-.015,1.7-.011,3.923,0,1.219,0,2.6,0,4.151,0,.323,0,.428.02.746a4.161,4.161,0,0,0,.13.86,2.816,2.816,0,0,0,.994,1.487,2.741,2.741,0,0,0,3.363,0,2.825,2.825,0,0,0,.99-1.487,3.919,3.919,0,0,0,.13-.86c.021-.323.027-.431.027-.746,0-1.865,0-3.513.009-4.838.005-1.816.009-3.016,0-3.237a4,4,0,0,0-.16-.859,2.825,2.825,0,0,0-.99-1.487A2.752,2.752,0,0,0,7.5,1.667Z" transform="translate(327 233)" fill="#50555c"/>
+        <path id="Emoji" d="M13.5,27A13.5,13.5,0,0,1,3.954,3.954,13.5,13.5,0,0,1,23.046,23.046,13.415,13.415,0,0,1,13.5,27Zm0-25.428A11.928,11.928,0,0,0,5.064,21.934,11.928,11.928,0,0,0,21.934,5.067,11.847,11.847,0,0,0,13.5,1.572Zm0,21.381a9.429,9.429,0,0,1-5.891-2.078,8.577,8.577,0,0,1-3.092-4.959.923.923,0,0,1,.158-.771.989.989,0,0,1,.764-.291,1.945,1.945,0,0,1,.449.056,26.281,26.281,0,0,0,7.3,1.035l.307,0H13.5l.3,0A26.308,26.308,0,0,0,21.1,14.914a1.914,1.914,0,0,1,.465-.06.98.98,0,0,1,.75.275.867.867,0,0,1,.185.7,8.543,8.543,0,0,1-3.07,5.021A9.421,9.421,0,0,1,13.5,22.954ZM6.54,16.278a.424.424,0,0,0-.459.324A1.227,1.227,0,0,0,6.756,17.8a15.749,15.749,0,0,0,6.571,1.425h.184a15.626,15.626,0,0,0,6.869-1.478,1.207,1.207,0,0,0,.574-1.168.425.425,0,0,0-.452-.3,1.354,1.354,0,0,0-.446.091l-.028.01a23.651,23.651,0,0,1-6.24.839l-.278,0a20.884,20.884,0,0,1-6.63-.878A1.193,1.193,0,0,0,6.54,16.278Zm11.239-5.471a1.578,1.578,0,0,1-1.578-1.6,1.558,1.558,0,0,1,1.558-1.563h.04a1.558,1.558,0,0,1,1.557,1.563,1.577,1.577,0,0,1-1.577,1.6Zm-8.55-.024A1.579,1.579,0,0,1,7.652,9.207,1.558,1.558,0,0,1,9.21,7.645h.04a1.568,1.568,0,0,1,1.1.451,1.549,1.549,0,0,1,.462,1.111A1.579,1.579,0,0,1,9.229,10.784Z" transform="translate(22 232)" fill="#50555c"/>
+        <g id="Return" transform="translate(281 162)">
+          <rect id="Return_background" data-name="Return background" width="88" height="42" fill="rgba(0,0,0,0)"/>
+          <g transform="matrix(1, 0, 0, 1, -284, -691)" filter="url(#Rectangle)">
+            <rect id="Rectangle-32" data-name="Rectangle" width="88" height="42" rx="4.6" transform="translate(284 691)" fill="#adb3bc"/>
+          </g>
+          <rect id="_Links_to" data-name="↳ Links to" width="88" height="42" fill="none"/>
+          <text id="_Label" data-name="↳ Label" transform="translate(0 11)" font-size="16" font-family="SegoeUI, Segoe UI" letter-spacing="0em"><tspan x="33.827" y="17">Go</tspan></text>
+        </g>
+        <g id="Space" transform="translate(93 162)">
+          <rect id="Space_background" data-name="Space background" width="182" height="33.923" fill="rgba(0,0,0,0)"/>
+          <g transform="matrix(1, 0, 0, 1, -96, -691)" filter="url(#Rectangle-2)">
+            <rect id="Rectangle-33" data-name="Rectangle" width="182" height="42" rx="4.6" transform="translate(96 691)" fill="#fcfcfe"/>
+          </g>
+          <text id="_Label-2" data-name="↳ Label" transform="translate(0 10.692)" font-size="16" font-family="SegoeUI, Segoe UI" letter-spacing="0em"><tspan x="70.963" y="17">space</tspan></text>
+        </g>
+        <g id="_123" data-name="123" transform="translate(0 162)">
+          <rect id="_123_background" data-name="123 background" width="87" height="42" fill="rgba(0,0,0,0)"/>
+          <g transform="matrix(1, 0, 0, 1, -3, -691)" filter="url(#Rectangle-3)">
+            <rect id="Rectangle-34" data-name="Rectangle" width="87" height="42" rx="4.6" transform="translate(3 691)" fill="#adb3bc"/>
+          </g>
+          <text id="_Label-3" data-name="↳ Label" transform="translate(0 12)" font-size="16" font-family="SegoeUI, Segoe UI" letter-spacing="-0.02em"><tspan x="30.882" y="17">123</tspan></text>
+        </g>
+        <g id="Delete" transform="translate(327 108)">
+          <g id="Key_Light" data-name="Key Light">
+            <rect id="Key_Light_background" data-name="Key Light background" width="42" height="42" fill="rgba(0,0,0,0)"/>
+            <g transform="matrix(1, 0, 0, 1, -330, -637)" filter="url(#Rectangle-4)">
+              <rect id="Rectangle-35" data-name="Rectangle" width="42" height="42" rx="4.6" transform="translate(330 637)" fill="#adb3bc"/>
+            </g>
+            <text id="_Label-4" data-name="↳ Label" transform="translate(0 12)" font-size="16" font-family="SegoeUI, Segoe UI" letter-spacing="-0.02em"><tspan x="18.809" y="17"> </tspan></text>
+          </g>
+          <path id="Delete_Button" data-name="Delete Button" d="M10.217,16.994h-.029l-.2,0-.239,0a7.647,7.647,0,0,1-1.132-.1A4.262,4.262,0,0,1,7.45,16.5a4,4,0,0,1-.989-.725L6.39,15.7l-.044-.045c-.138-.132-.2-.193-.279-.272l-2.5-2.5c-.064-.059-.122-.117-.172-.171s-.1-.1-.188-.185L1.252,10.576l-.185-.186c-.053-.053-.091-.093-.15-.157a6.413,6.413,0,0,1-.469-.514,1.681,1.681,0,0,1-.324-.5L.1,9.169A2.193,2.193,0,0,1,.122,7.778a1.662,1.662,0,0,1,.326-.5,5.6,5.6,0,0,1,.452-.5c.079-.085.116-.123.167-.175.088-.087.128-.128.185-.189L3.4,4.272l.081-.08c.03-.031.06-.059.076-.074a.668.668,0,0,1,.059-.052L5.747,1.928l.32-.321c.077-.076.139-.137.279-.272l.046-.046.068-.072a4.02,4.02,0,0,1,1-.729A4.311,4.311,0,0,1,8.625.105,7.579,7.579,0,0,1,9.732.01c.127,0,.227-.006.383-.006h.1c.167,0,.3,0,.574,0H17.4l.279,0c.241,0,.353,0,.48.007a7.661,7.661,0,0,1,1.138.1A4.21,4.21,0,0,1,20.45.491a3.871,3.871,0,0,1,1,.726,3.935,3.935,0,0,1,.726,1,4.328,4.328,0,0,1,.382,1.166,7.658,7.658,0,0,1,.1,1.106c0,.076,0,.152.006.254,0,.041,0,.041,0,.08s0,.086,0,.12V12c0,.035,0,.07,0,.136,0,.161,0,.238-.007.319a7.394,7.394,0,0,1-.1,1.141,4.2,4.2,0,0,1-.385,1.173,3.993,3.993,0,0,1-.727,1,3.928,3.928,0,0,1-1,.731,4.076,4.076,0,0,1-1.175.387,7.683,7.683,0,0,1-1.131.1l-.245,0-.184,0H10.217Zm.013-15.732c-.229,0-.328,0-.465.006a6.374,6.374,0,0,0-.931.079,2.96,2.96,0,0,0-.8.263,2.707,2.707,0,0,0-.678.5L7.3,2.16c-.047.049-.068.071-.093.093-.125.121-.182.176-.25.244l-.32.321L4.465,4.992c-.021.021-.041.04-.087.08l-.018.016-.074.074L4.1,5.351,2.154,7.295c-.055.058-.1.1-.2.2-.034.034-.061.063-.13.134L1.8,7.661a4.7,4.7,0,0,0-.385.425l-.043.048a.4.4,0,0,0-.075.106.924.924,0,0,0,0,.514.456.456,0,0,0,.077.111l.039.042a5.156,5.156,0,0,0,.407.446c.071.076.1.108.14.147l.186.186L4.1,11.642c.091.091.13.13.2.2.029.03.068.07.117.118.006,0,.014.012.023.021L4.462,12l2.495,2.5.25.245c.024.022.046.043.095.094l.049.051a2.725,2.725,0,0,0,.669.491,2.957,2.957,0,0,0,.806.266,6.323,6.323,0,0,0,.943.084H9.8l.2,0,.108,0,.122,0h7.4l.131,0,.115,0,.2,0H18.1a6.542,6.542,0,0,0,.948-.085,2.841,2.841,0,0,0,.812-.268,2.669,2.669,0,0,0,.682-.5,2.729,2.729,0,0,0,.5-.68,2.94,2.94,0,0,0,.266-.813,6.322,6.322,0,0,0,.083-.964c0-.082,0-.149.006-.3,0-.045,0-.076,0-.1s0-.036,0-.051V4.948c0-.03,0-.062,0-.11s0-.04,0-.078c0-.092,0-.158-.005-.239a6.464,6.464,0,0,0-.079-.931,2.931,2.931,0,0,0-.265-.807,2.681,2.681,0,0,0-.493-.678,2.647,2.647,0,0,0-.672-.491,3,3,0,0,0-.8-.265,6.555,6.555,0,0,0-.962-.08c-.12-.005-.219-.006-.457-.006l-.274,0h-6.6C10.517,1.259,10.392,1.259,10.229,1.262Zm6.023,10.565-.006.006L13.7,9.293l-2.54,2.542h0l-.007-.007a.548.548,0,0,1-.18.12.567.567,0,0,1-.618-.923.54.54,0,0,1,.105-.083L12.9,8.494l-2.55-2.546.008-.008a.566.566,0,1,1,.888-.691L13.7,7.7l2.476-2.478a.5.5,0,0,1,.062-.076.564.564,0,1,1,.8.8l.006.006L14.5,8.492l2.485,2.481a.588.588,0,0,1,.063.054.564.564,0,1,1-.8.8Z" transform="translate(9.66 12.66)"/>
+        </g>
+        <g id="Shift" transform="translate(0 108)">
+          <g id="Key_Light-2" data-name="Key Light">
+            <rect id="Key_Light_background-2" data-name="Key Light background" width="42" height="42" fill="rgba(0,0,0,0)"/>
+            <g transform="matrix(1, 0, 0, 1, -3, -637)" filter="url(#Rectangle-5)">
+              <rect id="Rectangle-36" data-name="Rectangle" width="42" height="42" rx="4.6" transform="translate(3 637)" fill="#fcfcfe"/>
+            </g>
+            <text id="Symbol" transform="translate(20.719 29)" font-size="22" font-family="SegoeUI, Segoe UI" letter-spacing="-0.025em"><tspan x="-3.013" y="0"> </tspan></text>
+          </g>
+          <path id="Shift-2" data-name="Shift" d="M18.14,10.464h-4.2v4.2c0,.067,0,.13,0,.2a2.912,2.912,0,0,1-.037.427,1.478,1.478,0,0,1-.133.4,1.337,1.337,0,0,1-.252.343,1.428,1.428,0,0,1-.346.25,1.574,1.574,0,0,1-.407.133,3.068,3.068,0,0,1-.428.037c-.067,0-.131,0-.2,0h-5.4c-.067,0-.131,0-.2,0a3.069,3.069,0,0,1-.428-.037,1.573,1.573,0,0,1-.407-.133,1.428,1.428,0,0,1-.346-.25,1.333,1.333,0,0,1-.252-.343,1.479,1.479,0,0,1-.133-.4,2.9,2.9,0,0,1-.037-.427c0-.067,0-.13,0-.2v-4.2H.676A.92.92,0,0,1,.209,9.018C.65,8.581,7.569,1.683,9.017.247A.7.7,0,0,1,9.44,0h.011a.5.5,0,0,1,.367.19c1.448,1.436,8.391,8.391,8.831,8.828A.87.87,0,0,1,18.14,10.464Z" transform="translate(11.66 12.2)"/>
+        </g>
+        <g id="M" transform="translate(282 108)">
+          <g transform="matrix(1, 0, 0, 1, -285, -637)" filter="url(#Rectangle-6)">
+            <rect id="Rectangle-37" data-name="Rectangle" width="32" height="42" rx="4.6" transform="translate(285 637)" fill="#fcfcfe"/>
+          </g>
+          <text id="Symbol-2" data-name="Symbol" transform="translate(16.5 29)" font-size="22.5" font-family="SegoeUI, Segoe UI" letter-spacing="-0.025em"><tspan x="-10.102" y="0">M</tspan></text>
+        </g>
+        <g id="N" transform="translate(244 108)">
+          <g transform="matrix(1, 0, 0, 1, -247, -637)" filter="url(#Rectangle-7)">
+            <rect id="Rectangle-38" data-name="Rectangle" width="32" height="42" rx="4.6" transform="translate(247 637)" fill="#fcfcfe"/>
+          </g>
+          <text id="Symbol-3" data-name="Symbol" transform="translate(16.5 29)" font-size="22.5" font-family="SegoeUI, Segoe UI" letter-spacing="-0.025em"><tspan x="-8.416" y="0">N</tspan></text>
+        </g>
+        <g id="B" transform="translate(206 108)">
+          <g transform="matrix(1, 0, 0, 1, -209, -637)" filter="url(#Rectangle-8)">
+            <rect id="Rectangle-39" data-name="Rectangle" width="32" height="42" rx="4.6" transform="translate(209 637)" fill="#fcfcfe"/>
+          </g>
+          <text id="Symbol-4" data-name="Symbol" transform="translate(16.5 29)" font-size="22.5" font-family="SegoeUI, Segoe UI" letter-spacing="-0.025em"><tspan x="-6.449" y="0">B</tspan></text>
+        </g>
+        <g id="V" transform="translate(169 108)">
+          <g transform="matrix(1, 0, 0, 1, -172, -637)" filter="url(#Rectangle-9)">
+            <rect id="Rectangle-40" data-name="Rectangle" width="32" height="42" rx="4.6" transform="translate(172 637)" fill="#fcfcfe"/>
+          </g>
+          <text id="Symbol-5" data-name="Symbol" transform="translate(16.5 29)" font-size="22.5" font-family="SegoeUI, Segoe UI" letter-spacing="-0.025em"><tspan x="-6.987" y="0">V</tspan></text>
+        </g>
+        <g id="C" transform="translate(131 108)">
+          <g transform="matrix(1, 0, 0, 1, -134, -637)" filter="url(#Rectangle-10)">
+            <rect id="Rectangle-41" data-name="Rectangle" width="32" height="42" rx="4.6" transform="translate(134 637)" fill="#fcfcfe"/>
+          </g>
+          <text id="Symbol-6" data-name="Symbol" transform="translate(16.5 29)" font-size="22.5" font-family="SegoeUI, Segoe UI" letter-spacing="-0.025em"><tspan x="-6.965" y="0">C</tspan></text>
+        </g>
+        <g id="X" transform="translate(94 108)">
+          <g transform="matrix(1, 0, 0, 1, -97, -637)" filter="url(#Rectangle-11)">
+            <rect id="Rectangle-42" data-name="Rectangle" width="32" height="42" rx="4.6" transform="translate(97 637)" fill="#fcfcfe"/>
+          </g>
+          <text id="Symbol-7" data-name="Symbol" transform="translate(16.5 29)" font-size="22.5" font-family="SegoeUI, Segoe UI" letter-spacing="-0.025em"><tspan x="-6.636" y="0">X</tspan></text>
+        </g>
+        <g id="Z" transform="translate(56 108)">
+          <g transform="matrix(1, 0, 0, 1, -59, -637)" filter="url(#Rectangle-12)">
+            <rect id="Rectangle-43" data-name="Rectangle" width="32" height="42" rx="4.6" transform="translate(59 637)" fill="#fcfcfe"/>
+          </g>
+          <text id="Symbol-8" data-name="Symbol" transform="translate(16.5 29)" font-size="22.5" font-family="SegoeUI, Segoe UI" letter-spacing="-0.025em"><tspan x="-6.416" y="0">Z</tspan></text>
+        </g>
+        <g id="L" transform="translate(319 54)">
+          <g transform="matrix(1, 0, 0, 1, -322, -583)" filter="url(#Rectangle-13)">
+            <rect id="Rectangle-44" data-name="Rectangle" width="32" height="42" rx="4.6" transform="translate(322 583)" fill="#fcfcfe"/>
+          </g>
+          <text id="Symbol-9" data-name="Symbol" transform="translate(16.5 29)" font-size="22.5" font-family="SegoeUI, Segoe UI" letter-spacing="-0.025em"><tspan x="-5.295" y="0">L</tspan></text>
+        </g>
+        <g id="K" transform="translate(281 54)">
+          <g transform="matrix(1, 0, 0, 1, -284, -583)" filter="url(#Rectangle-14)">
+            <rect id="Rectangle-45" data-name="Rectangle" width="32" height="42" rx="4.6" transform="translate(284 583)" fill="#fcfcfe"/>
+          </g>
+          <text id="Symbol-10" data-name="Symbol" transform="translate(16.5 29)" font-size="22.5" font-family="SegoeUI, Segoe UI" letter-spacing="-0.025em"><tspan x="-6.526" y="0">K</tspan></text>
+        </g>
+        <g id="J" transform="translate(244 54)">
+          <g transform="matrix(1, 0, 0, 1, -247, -583)" filter="url(#Rectangle-15)">
+            <rect id="Rectangle-46" data-name="Rectangle" width="32" height="42" rx="4.6" transform="translate(247 583)" fill="#fcfcfe"/>
+          </g>
+          <text id="Symbol-11" data-name="Symbol" transform="translate(16.5 29)" font-size="22.5" font-family="SegoeUI, Segoe UI" letter-spacing="-0.025em"><tspan x="-4.016" y="0">J</tspan></text>
+        </g>
+        <g id="H" transform="translate(206 54)">
+          <g transform="matrix(1, 0, 0, 1, -209, -583)" filter="url(#Rectangle-16)">
+            <rect id="Rectangle-47" data-name="Rectangle" width="32" height="42" rx="4.6" transform="translate(209 583)" fill="#fcfcfe"/>
+          </g>
+          <text id="Symbol-12" data-name="Symbol" transform="translate(16.5 29)" font-size="22.5" font-family="SegoeUI, Segoe UI" letter-spacing="-0.025em"><tspan x="-7.987" y="0">H</tspan></text>
+        </g>
+        <g id="G" transform="translate(169 54)">
+          <g transform="matrix(1, 0, 0, 1, -172, -583)" filter="url(#Rectangle-17)">
+            <rect id="Rectangle-48" data-name="Rectangle" width="32" height="42" rx="4.6" transform="translate(172 583)" fill="#fcfcfe"/>
+          </g>
+          <text id="Symbol-13" data-name="Symbol" transform="translate(16.5 29)" font-size="22.5" font-family="SegoeUI, Segoe UI" letter-spacing="-0.025em"><tspan x="-7.718" y="0">G</tspan></text>
+        </g>
+        <g id="F" transform="translate(131 54)">
+          <g transform="matrix(1, 0, 0, 1, -134, -583)" filter="url(#Rectangle-18)">
+            <rect id="Rectangle-49" data-name="Rectangle" width="32" height="42" rx="4.6" transform="translate(134 583)" fill="#fcfcfe"/>
+          </g>
+          <text id="Symbol-14" data-name="Symbol" transform="translate(16.5 29)" font-size="22.5" font-family="SegoeUI, Segoe UI" letter-spacing="-0.025em"><tspan x="-5.493" y="0">F</tspan></text>
+        </g>
+        <g id="D" transform="translate(94 54)">
+          <g transform="matrix(1, 0, 0, 1, -97, -583)" filter="url(#Rectangle-19)">
+            <rect id="Rectangle-50" data-name="Rectangle" width="32" height="42" rx="4.6" transform="translate(97 583)" fill="#fcfcfe"/>
+          </g>
+          <text id="Symbol-15" data-name="Symbol" transform="translate(16.5 29)" font-size="22.5" font-family="SegoeUI, Segoe UI" letter-spacing="-0.025em"><tspan x="-7.888" y="0">D</tspan></text>
+        </g>
+        <g id="S" transform="translate(56 54)">
+          <g transform="matrix(1, 0, 0, 1, -59, -583)" filter="url(#Rectangle-20)">
+            <rect id="Rectangle-51" data-name="Rectangle" width="32" height="42" rx="4.6" transform="translate(59 583)" fill="#fcfcfe"/>
+          </g>
+          <text id="Symbol-16" data-name="Symbol" transform="translate(16.5 29)" font-size="22.5" font-family="SegoeUI, Segoe UI" letter-spacing="-0.025em"><tspan x="-5.977" y="0">S</tspan></text>
+        </g>
+        <g id="A" transform="translate(19 54)">
+          <g transform="matrix(1, 0, 0, 1, -22, -583)" filter="url(#Rectangle-21)">
+            <rect id="Rectangle-52" data-name="Rectangle" width="32" height="42" rx="4.6" transform="translate(22 583)" fill="#fcfcfe"/>
+          </g>
+          <text id="Symbol-17" data-name="Symbol" transform="translate(16.5 29)" font-size="22.5" font-family="SegoeUI, Segoe UI" letter-spacing="-0.025em"><tspan x="-7.256" y="0">A</tspan></text>
+        </g>
+        <g id="P" transform="translate(337)">
+          <g transform="matrix(1, 0, 0, 1, -340, -529)" filter="url(#Rectangle-22)">
+            <rect id="Rectangle-53" data-name="Rectangle" width="32" height="42" rx="4.6" transform="translate(340 529)" fill="#fcfcfe"/>
+          </g>
+          <text id="Symbol-18" data-name="Symbol" transform="translate(16.5 29)" font-size="22.5" font-family="SegoeUI, Segoe UI" letter-spacing="-0.025em"><tspan x="-6.301" y="0">P</tspan></text>
+        </g>
+        <g id="O" transform="translate(300)">
+          <g transform="matrix(1, 0, 0, 1, -303, -529)" filter="url(#Rectangle-23)">
+            <rect id="Rectangle-54" data-name="Rectangle" width="32" height="42" rx="4.6" transform="translate(303 529)" fill="#fcfcfe"/>
+          </g>
+          <text id="Symbol-19" data-name="Symbol" transform="translate(16.5 29)" font-size="22.5" font-family="SegoeUI, Segoe UI" letter-spacing="-0.025em"><tspan x="-8.481" y="0">O</tspan></text>
+        </g>
+        <g id="I" transform="translate(262)">
+          <g transform="matrix(1, 0, 0, 1, -265, -529)" filter="url(#Rectangle-24)">
+            <rect id="Rectangle-55" data-name="Rectangle" width="32" height="42" rx="4.6" transform="translate(265 529)" fill="#fcfcfe"/>
+          </g>
+          <text id="Symbol-20" data-name="Symbol" transform="translate(16.5 29)" font-size="22.5" font-family="SegoeUI, Segoe UI" letter-spacing="-0.025em"><tspan x="-2.994" y="0">I</tspan></text>
+        </g>
+        <g id="U" transform="translate(225)">
+          <g transform="matrix(1, 0, 0, 1, -228, -529)" filter="url(#Rectangle-25)">
+            <rect id="Rectangle-56" data-name="Rectangle" width="32" height="42" rx="4.6" transform="translate(228 529)" fill="#fcfcfe"/>
+          </g>
+          <text id="Symbol-21" data-name="Symbol" transform="translate(16.5 29)" font-size="22.5" font-family="SegoeUI, Segoe UI" letter-spacing="-0.025em"><tspan x="-7.729" y="0">U</tspan></text>
+        </g>
+        <g id="Y" transform="translate(187)">
+          <g transform="matrix(1, 0, 0, 1, -190, -529)" filter="url(#Rectangle-26)">
+            <rect id="Rectangle-57" data-name="Rectangle" width="32" height="42" rx="4.6" transform="translate(190 529)" fill="#fcfcfe"/>
+          </g>
+          <text id="Symbol-22" data-name="Symbol" transform="translate(16.5 29)" font-size="22.5" font-family="SegoeUI, Segoe UI" letter-spacing="-0.025em"><tspan x="-6.218" y="0">Y</tspan></text>
+        </g>
+        <g id="T" transform="translate(150)">
+          <g transform="matrix(1, 0, 0, 1, -153, -529)" filter="url(#Rectangle-27)">
+            <rect id="Rectangle-58" data-name="Rectangle" width="32" height="42" rx="4.6" transform="translate(153 529)" fill="#fcfcfe"/>
+          </g>
+          <text id="Symbol-23" data-name="Symbol" transform="translate(16.5 29)" font-size="22.5" font-family="SegoeUI, Segoe UI" letter-spacing="-0.025em"><tspan x="-5.894" y="0">T</tspan></text>
+        </g>
+        <g id="R" transform="translate(112)">
+          <g transform="matrix(1, 0, 0, 1, -115, -529)" filter="url(#Rectangle-28)">
+            <rect id="Rectangle-59" data-name="Rectangle" width="32" height="42" rx="4.6" transform="translate(115 529)" fill="#fcfcfe"/>
+          </g>
+          <text id="Symbol-24" data-name="Symbol" transform="translate(16.5 29)" font-size="22.5" font-family="SegoeUI, Segoe UI" letter-spacing="-0.025em"><tspan x="-6.729" y="0">R</tspan></text>
+        </g>
+        <g id="E" transform="translate(75)">
+          <g transform="matrix(1, 0, 0, 1, -78, -529)" filter="url(#Rectangle-29)">
+            <rect id="Rectangle-60" data-name="Rectangle" width="32" height="42" rx="4.6" transform="translate(78 529)" fill="#fcfcfe"/>
+          </g>
+          <text id="Symbol-25" data-name="Symbol" transform="translate(16.5 29)" font-size="22.5" font-family="SegoeUI, Segoe UI" letter-spacing="-0.025em"><tspan x="-5.691" y="0">E</tspan></text>
+        </g>
+        <g id="W" transform="translate(37)">
+          <g transform="matrix(1, 0, 0, 1, -40, -529)" filter="url(#Rectangle-30)">
+            <rect id="Rectangle-61" data-name="Rectangle" width="32" height="42" rx="4.6" transform="translate(40 529)" fill="#fcfcfe"/>
+          </g>
+          <text id="Symbol-26" data-name="Symbol" transform="translate(16.5 29)" font-size="22.5" font-family="SegoeUI, Segoe UI" letter-spacing="-0.025em"><tspan x="-10.508" y="0">W</tspan></text>
+        </g>
+        <g id="Q">
+          <g transform="matrix(1, 0, 0, 1, -3, -529)" filter="url(#Rectangle-31)">
+            <rect id="Rectangle-62" data-name="Rectangle" width="32" height="42" rx="4.6" transform="translate(3 529)" fill="#fcfcfe"/>
+          </g>
+          <text id="Symbol-27" data-name="Symbol" transform="translate(16.5 29)" font-size="22.5" font-family="SegoeUI, Segoe UI" letter-spacing="-0.025em"><tspan x="-8.481" y="0">Q</tspan></text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
