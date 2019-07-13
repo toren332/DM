@@ -144,7 +144,7 @@ class ShoesItem(models.Model):
         ('autumn_spring', 'AUTUMN_SPRING'),
         ('demiseason', 'DEMISEASON'),
         ('beach', 'BEACH'),
-        ('multi','MULTI')
+        ('multi', 'MULTI')
     )
 
     season = models.CharField(max_length=100, choices=season_CHOICES)
