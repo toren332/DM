@@ -59,22 +59,40 @@ def filter_and_sort(data, queryset, profile):
         if filters.get('brand_filter'):
             new_queryset = queryset.filter(brand=filters['brand_filter']['brand'][0])
             for brand in filters['brand_filter']['brand']:
-                new_queryset.union(queryset.filter(brand=brand))
+                new_queryset = new_queryset.union(queryset.filter(brand=brand))
             queryset = new_queryset
         if filters.get('color_filter'):
             new_queryset = queryset.filter(color=filters['color_filter']['color'][0])
             for color in filters['color_filter']['color']:
-                new_queryset.union(queryset.filter(color=color))
+                new_queryset = new_queryset.union(queryset.filter(color=color))
             queryset = new_queryset
         if filters.get('subcategory_filter'):
-            new_queryset = queryset.filter(subcategory=filters['subcategory_filter']['subcategory'][0])
-            for subcategory in filters['subcategory_filter']['subcategory']:
-                new_queryset.union(queryset.filter(subcategory=subcategory))
+            if filters.get('subsubcategory_filter'):
+                return {'ERROR': 'Please, choose subsubcategory OR subcategory'}, False
+            subsubcategory_CHOICES = models.ShoesItem.subsubcategory_CHOICES
+            subsubcategorys = []
+            for i in range(subsubcategory_CHOICES.__len__()):
+                for j in filters['subcategory_filter']['subcategory']:
+                    if subsubcategory_CHOICES[i][0] == j:
+                        for k in subsubcategory_CHOICES[i][1]:
+                            subsubcategorys.append(k[0])
+
+            subsubcategory = subsubcategorys[0]
+            new_queryset = queryset.filter(subsubcategory=subsubcategory)
+            for subsubcategory in subsubcategorys:
+                new_queryset = new_queryset.union(queryset.filter(subsubcategory=subsubcategory))
+            queryset = new_queryset
+        elif filters.get('subsubcategory_filter'):
+            if filters.get('subcategory_filter'):
+                return {'ERROR': 'Please, choose subsubcategory OR subcategory'}, False
+            new_queryset = queryset.filter(subsubcategory=filters['subsubcategory_filter']['subsubcategory'][0])
+            for subsubcategory in filters['subsubcategory_filter']['subsubcategory']:
+                new_queryset = new_queryset.union(queryset.filter(subsubcategory=subsubcategory))
             queryset = new_queryset
         if filters.get('season_filter'):
             new_queryset = queryset.filter(season=filters['season_filter']['season'][0])
             for season in filters['season_filter']['season']:
-                new_queryset.union(queryset.filter(season=season))
+                new_queryset = new_queryset.union(queryset.filter(season=season))
             queryset = new_queryset
 
     if data.get('sort'):
@@ -84,6 +102,6 @@ def filter_and_sort(data, queryset, profile):
                 queryset = queryset.order_by('price')   # сортирует по цене в одном порядке
             else:
                 queryset = queryset.order_by('-price')  # сортирует по цене в другом порядке
-    return queryset
+    return ({'ERROR': None},queryset)
 
 

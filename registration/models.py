@@ -16,27 +16,137 @@ class ShoesItem(models.Model):
         ('shoes', 'SHOES'),
     )
     category = models.CharField(max_length=100, choices=category_CHOICES)
-    subcategory_CHOICES = (
-        ('boots', 'BOOTS'),
-        ('sneakers', 'SNEAKERS'),
-        ('gumshoes', 'GUMSHOES'),
-    )
-    subcategory = models.CharField(max_length=100, choices=subcategory_CHOICES)
-    subsubcategory = models.CharField(max_length=100)
+    subsubcategory_CHOICES = [
+        ('classic',
+         (
+             ('oxfords', 'OXFORDS'),
+             ('derby', 'DERBY'),
+             ('lufers', 'LUFERS'),
+             ('monkey', 'MONKEY'),
+             ('brogy', 'BROGY'),
+             ('forth_brogy', 'FORTH_BROGY'),
+             ('half_brogy', 'HALF_BROGY'),
+         )
+         ),
+        ('boots',
+         (
+             ('chakka', 'CHAKKA'),
+             ('desert', 'DESERT'),
+             ('chelsi', 'CHELSI'),
+         )
+         ),
+        ('casual',
+         (
+             ('topsiders', 'TOPSIDERS'),
+             ('mokasins', 'MOKASINS'),
+             ('espadrils', 'ESPADRILS'),
+             ('sandals', 'SANDALS'),
+         )
+         ),
+        ('sport',
+         (
+             ('cross', 'CROSS'),
+             ('football', 'FOOTBALL'),
+             ('basketball', 'BASKETBALL'),
+             ('tennis', 'TENNIS'),
+             ('run', 'RUN'),
+             ('keds', 'KEDS'),
+         )
+         ),
 
-    top_material = models.CharField(max_length=100, blank=True)
-    inside_material = models.CharField(max_length=100, blank=True)
-    bottom_material = models.CharField(max_length=100, blank=True)
-    step_material = models.CharField(max_length=100, blank=True)
-    height = models.PositiveIntegerField(blank=True, null=True)
-    country = models.CharField(max_length=100, blank=True)
+    ]
+
+    subsubcategory = models.CharField(max_length=100, choices=subsubcategory_CHOICES)
+
+    top_material_CHOICES = (
+        ('nat_skin', 'NAT_SKIN'),
+        ('no_nat_skin', 'NO_NAT_SKIN'),
+        ('tecstyle', 'TECSTYLE'),
+        ('nat_nubuk', 'NAT_NUBUK'),
+        ('nat_zamsh', 'NAT_ZAMSH'),
+        ('fetr', 'FETR'),
+        ('polyester', 'POLYESTER'),
+        ('neylon', 'NEYLON'),
+        ('sherst', 'SHERST'),
+        ('no_nat_zamsh', 'NO_NAT_ZAMSH'),
+        ('no_nat_nubuk', 'NO_NAT_NUBUK'),
+        ('polyuretan', 'POLYURETAN'),
+        ('spiloc', 'SPILOC'),
+        ('cotton', 'COTTON'),
+    )
+
+    top_material = models.CharField(max_length=100, choices=top_material_CHOICES, blank=True)
+
+    inside_material_CHOICES = (
+        ('bayka', 'BAYKA'),
+        ('sherst', 'SHERST'),
+        ('nat_skin', 'NAT_SKIN'),
+        ('tecstyle', 'TECSTYLE'),
+        ('nat_meh', 'NAT_meh'),
+        ('no_nat_nubuk', 'NO_NAT_NUBUK'),
+        ('no_nat_meh', 'NO_NAT_meh'),
+        ('no_nat_skin', 'NO_NAT_SKIN'),
+        ('without', 'WITHOUT'),
+        ('sherst_meh', 'SHERST_MEH'),
+        ('polyester', 'POLYESTER'),
+    )
+    inside_material = models.CharField(max_length=100, blank=True, choices=inside_material_CHOICES)
+
+    bottom_material_CHOICES = (
+        ('rezina', 'REZINA'),
+        ('polyuretan', 'POLYURETAN'),
+        ('kozhvolon', 'KOZHVOLON'),
+        ('no_nat', 'NO_NAT'),
+        ('polymer', 'POLYMER'),
+        ('thermoplastic_rezina', 'THERMOPLASTIC_REZINA'),
+        ('thermopolyuretan', 'THERMOPOLYURETAN'),
+        ('filon', 'FILON'),
+        ('thermoelast', 'THERMOELAST'),
+        ('micropore', 'MICROPORE'),
+    )
+    bottom_material = models.CharField(max_length=100, blank=True, choices=bottom_material_CHOICES)
+
+    step_material_CHOICES = (
+        ('tecstyle', 'TECSTYLE'),
+        ('nat_skin', 'NAT_SKIN'),
+        ('nat_meh', 'NAT_meh'),
+        ('no_nat_meh', 'NO_NAT_meh'),
+        ('bayka', 'BAYKA'),
+        ('sherst', 'SHERST'),
+        ('sherst_meh', 'SHERST_MEH'),
+        ('polyester', 'POLYESTER'),
+        ('no_nat_skin', 'NO_NAT_SKIN'),
+        ('no_nat_zamsh', 'NO_NAT_ZAMSH'),
+        ('cotton', 'COTTON'),
+    )
+
+    step_material = models.CharField(max_length=100, blank=True, choices=step_material_CHOICES)
+
+    country_CHOICES = (
+        ('thailand', 'THAILAND'),
+        ('china', 'CHINA'),
+        ('russia', 'RUSSIA'),
+        ('portugal', 'PORTUGAL'),
+        ('turkish', 'TURKISH'),
+        ('vietnam', 'VIETNAM'),
+        ('india', 'INDIA'),
+        ('germany', 'GERMANY'),
+        ('rumany', 'RUMANY'),
+        ('italy', 'ITALY'),
+        ('indonize', 'INDONIZE'),
+        ('spain', 'SPAIN'),
+    )
+
+    country = models.CharField(max_length=100, blank=True, choices=country_CHOICES)
     season_CHOICES = (
         ('winter', 'WINTER'),
         ('summer', 'SUMMER'),
-        ('autumn', 'AUTUMN'),
-        ('spring', 'SPRING'),
-        ('autumn-winter', 'AUTUMN-WINTER'),
+        ('autumn_spring', 'AUTUMN_SPRING'),
+        ('demiseason', 'DEMISEASON'),
+        ('beach', 'BEACH'),
+        ('multi','MULTI')
     )
+
     season = models.CharField(max_length=100, choices=season_CHOICES)
     color_CHOICES = (
         ('black', 'BLACK'),
@@ -54,9 +164,24 @@ class ShoesItem(models.Model):
         ('orange', 'ORANGE'),
     )
     color = models.CharField(max_length=100, choices=color_CHOICES)
-    zip_type = models.CharField(max_length=100, blank=True)
-    furniture_color = models.CharField(max_length=100, blank=True)
-    sport_type = models.CharField(max_length=100, blank=True)
+    zip_type_CHOICES = (
+        ('shnirky', 'SHNURKY'),
+        ('lipuchky', 'LIPUCHKY'),
+        ('without', 'WITHOUT'),
+        ('zip', 'ZIP'),
+    )
+    zip_type = models.CharField(max_length=100, blank=True, choices=zip_type_CHOICES)
+    sport_type_CHOICES = (
+        ('sport_style', 'SPORT_STYLE'),
+        ('run', 'RUN'),
+        ('football', 'FOOTBALL'),
+        ('training', 'TRAINING'),
+        ('tennis', 'TENNIS'),
+        ('basketball', 'BASKETBALL'),
+        ('voleyball', 'VOLEYBALL'),
+        ('zal', 'ZAL'),
+    )
+    sport_type = models.CharField(max_length=100, blank=True, choices=sport_type_CHOICES)
 
     image_main = models.URLField()
     image_1 = models.URLField()

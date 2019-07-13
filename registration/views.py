@@ -73,9 +73,10 @@ class Shoes(viewsets.ModelViewSet):
         if not serializer.is_valid():
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-        #queryset = self.get_queryset()
         profile = models.Profile.objects.get(user=request.user)
-        queryset = filter_and_sort(data, self.get_queryset(), profile=profile)
+        error, queryset = filter_and_sort(data, self.get_queryset(), profile=profile)
+        if error['ERROR'] is not None:
+            return Response(error, status=status.HTTP_409_CONFLICT)
         serializer = serializers.ShoesShortSerializer(queryset, many=True)
 
         return Response(serializer.data, status=status.HTTP_200_OK)

@@ -135,28 +135,28 @@ class ShoesShortSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.ShoesItem
-        fields = ('id', 'image_main', 'name', 'subsubcategory', 'subcategory', 'category', 'price', 'brand')
+        fields = ('id', 'image_main', 'name', 'subsubcategory', 'category', 'price', 'brand')
 
 
 class FilterSerializer(serializers.Serializer):
-
-    class PriceFilterSerializer(serializers.Serializer):
-        start_price = serializers.IntegerField()
-        end_price = serializers.IntegerField()
 
     class BrandFilterSerializer(serializers.Serializer):
         brand = serializers.ListField(
             child=serializers.CharField()
         )
 
-    class ColorFilterSerializer(serializers.Serializer):
-        color_CHOICES = models.ShoesItem.color_CHOICES
-        color = serializers.ListField(
-            child=serializers.ChoiceField(color_CHOICES)
+    class SubsubcategoryFilterSerializer(serializers.Serializer):
+        subsubcategory_CHOICES = models.ShoesItem.subsubcategory_CHOICES
+        subsubcategory = serializers.ListField(
+            child=serializers.ChoiceField(subsubcategory_CHOICES)
         )
 
-    class SubategoryFilterSerializer(serializers.Serializer):
-        subcategory_CHOICES = models.ShoesItem.subcategory_CHOICES
+    class SubcategoryFilterSerializer(serializers.Serializer):
+        subsubcategory_CHOICES = models.ShoesItem.subsubcategory_CHOICES
+        subcategory_CHOICES = []
+        for i in subsubcategory_CHOICES:
+            subcategory_CHOICES.append((i[0], i[0].upper()))
+        subcategory_CHOICES = tuple(subcategory_CHOICES)
         subcategory = serializers.ListField(
             child=serializers.ChoiceField(subcategory_CHOICES)
         )
@@ -167,10 +167,22 @@ class FilterSerializer(serializers.Serializer):
             child=serializers.ChoiceField(season_CHOICES)
         )
 
+    class ColorFilterSerializer(serializers.Serializer):
+        color_CHOICES = models.ShoesItem.color_CHOICES
+        color = serializers.ListField(
+            child=serializers.ChoiceField(color_CHOICES)
+        )
+
+    class PriceFilterSerializer(serializers.Serializer):
+        start_price = serializers.IntegerField()
+        end_price = serializers.IntegerField()
+
+
     price_filter = PriceFilterSerializer(required=False)
     brand_filter = BrandFilterSerializer(required=False)
     color_filter = ColorFilterSerializer(required=False)
-    category_filter = SubategoryFilterSerializer(required=False)
+    subcategory_filter = SubcategoryFilterSerializer(required=False)
+    subsubcategory_filter = SubsubcategoryFilterSerializer(required=False)
     season_filter = SeasonFilterSerializer(required=False)
 
 
