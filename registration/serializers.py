@@ -127,8 +127,8 @@ class ShoesSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.ShoesItem
-        exclude = ('top_material', 'inside_material', 'bottom_material', 'step_material', 'height',
-                   'country', 'season', 'color', 'zip_type', 'furniture_color', 'sport_type')
+        exclude = ('top_material', 'inside_material', 'bottom_material', 'step_material',
+                   'country', 'season', 'color', 'zip_type', 'sport_type')
 
 
 class ShoesShortSerializer(serializers.ModelSerializer):
