@@ -53,13 +53,19 @@ def filter_and_sort(data, queryset, profile):
 
     if data.get('filter'):
         filters = data['filter']
-
+        if filters.get('price_filter'):
+            queryset = queryset.filter(price__gte=filters['price_filter']['start_price'])   # фильтрует цене выше заданной
+            queryset = queryset.filter(price__lte=filters['price_filter']['end_price'])     # фильтрует цене ниже заданной
         if filters.get('brand_filter'):
             new_queryset = queryset.filter(brand=filters['brand_filter']['brand'][0])
             for brand in filters['brand_filter']['brand']:
                 new_queryset = new_queryset.union(queryset.filter(brand=brand))
             queryset = new_queryset
-
+        if filters.get('color_filter'):
+            new_queryset = queryset.filter(color=filters['color_filter']['color'][0])
+            for color in filters['color_filter']['color']:
+                new_queryset = new_queryset.union(queryset.filter(color=color))
+            queryset = new_queryset
         if filters.get('subcategory_filter'):
             if filters.get('subsubcategory_filter'):
                 return {'ERROR': 'Please, choose subsubcategory OR subcategory'}, False
@@ -83,60 +89,11 @@ def filter_and_sort(data, queryset, profile):
             for subsubcategory in filters['subsubcategory_filter']['subsubcategory']:
                 new_queryset = new_queryset.union(queryset.filter(subsubcategory=subsubcategory))
             queryset = new_queryset
-            
-        if filters.get('top_material_filter'):
-            new_queryset = queryset.filter(top_material=filters['top_material_filter']['top_material'][0])
-            for top_material in filters['top_material_filter']['top_material']:
-                new_queryset = new_queryset.union(queryset.filter(top_material=top_material))
-            queryset = new_queryset
-            
-        if filters.get('inside_material_filter'):
-            new_queryset = queryset.filter(inside_material=filters['inside_material_filter']['inside_material'][0])
-            for inside_material in filters['inside_material_filter']['inside_material']:
-                new_queryset = new_queryset.union(queryset.filter(inside_material=inside_material))
-            queryset = new_queryset
-            
-        if filters.get('bottom_material_filter'):
-            new_queryset = queryset.filter(bottom_material=filters['bottom_material_filter']['bottom_material'][0])
-            for bottom_material in filters['bottom_material_filter']['bottom_material']:
-                new_queryset = new_queryset.union(queryset.filter(bottom_material=bottom_material))
-            queryset = new_queryset
-            
-        if filters.get('step_material_filter'):
-            new_queryset = queryset.filter(step_material=filters['step_material_filter']['step_material'][0])
-            for step_material in filters['step_material_filter']['step_material']:
-                new_queryset = new_queryset.union(queryset.filter(step_material=step_material))
-            queryset = new_queryset
-        
-        if filters.get('country_filter'):
-            new_queryset = queryset.filter(country=filters['country_filter']['country'][0])
-            for country in filters['country_filter']['country']:
-                new_queryset = new_queryset.union(queryset.filter(country=country))
-            queryset = new_queryset
-        
         if filters.get('season_filter'):
             new_queryset = queryset.filter(season=filters['season_filter']['season'][0])
             for season in filters['season_filter']['season']:
                 new_queryset = new_queryset.union(queryset.filter(season=season))
             queryset = new_queryset
-        if filters.get('color_filter'):
-            new_queryset = queryset.filter(color=filters['color_filter']['color'][0])
-            for color in filters['color_filter']['color']:
-                new_queryset = new_queryset.union(queryset.filter(color=color))
-            queryset = new_queryset
-        if filters.get('zip_type_filter'):
-            new_queryset = queryset.filter(zip_type=filters['zip_type_filter']['zip_type'][0])
-            for zip_type in filters['zip_type_filter']['zip_type']:
-                new_queryset = new_queryset.union(queryset.filter(zip_type=zip_type))
-            queryset = new_queryset
-        if filters.get('sport_type_filter'):
-            new_queryset = queryset.filter(sport_type=filters['sport_type_filter']['sport_type'][0])
-            for sport_type in filters['sport_type_filter']['sport_type']:
-                new_queryset = new_queryset.union(queryset.filter(sport_type=sport_type))
-            queryset = new_queryset
-        if filters.get('price_filter'):
-            queryset = queryset.filter(price__gte=filters['price_filter']['start_price'])  # фильтрует цене выше заданной
-            queryset = queryset.filter(price__lte=filters['price_filter']['end_price'])  # фильтрует цене ниже заданной
 
     if data.get('sort'):
         sort = data['sort']
@@ -145,7 +102,6 @@ def filter_and_sort(data, queryset, profile):
                 queryset = queryset.order_by('price')   # сортирует по цене в одном порядке
             else:
                 queryset = queryset.order_by('-price')  # сортирует по цене в другом порядке
-
-    return {'ERROR': None}, queryset
+    return ({'ERROR': None},queryset)
 
 

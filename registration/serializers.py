@@ -2,6 +2,7 @@ from rest_framework import serializers
 from . import models
 from django.contrib.auth.models import User
 import random
+from django.contrib.auth.base_user import BaseUserManager
 from registration.smsc_api import *
 
 
@@ -11,8 +12,8 @@ def send_sms(phone, text):
 
 
 class UserSerializer(serializers.ModelSerializer):
-    username = serializers.IntegerField(min_value=70000000000, max_value=79999999999, required=True)
-    password = serializers.CharField(min_length=8)
+    username = serializers.IntegerField(min_value=70000000000, max_value=79999999999, required=False)
+    password = serializers.CharField(min_length=8, required=False)
 
     def create(self, validated_data):
         valid_username = User.objects.filter(username=validated_data['username'])
@@ -20,7 +21,7 @@ class UserSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError("This user already exist")
         else:
             user = User.objects.create_user(username=validated_data['username'],
-                                            password=validated_data['password'])
+                                            password=BaseUserManager().make_random_password())
         return user
 
     def update(self, instance: models.User, validated_data):
@@ -29,7 +30,7 @@ class UserSerializer(serializers.ModelSerializer):
 
                 users_by_username = User.objects.filter(username=validated_data['username'])
                 if users_by_username:
-                    user_by_username = users_by_username[0]
+                    user_by_username = users_by_username.get(username=validated_data['username'])
                     if user_by_username.username != instance.username:
                         raise serializers.ValidationError("This phone already used")
                     else:
@@ -53,26 +54,10 @@ class UserSerializer(serializers.ModelSerializer):
 
 class ProfileSerializer(serializers.ModelSerializer):
     user = UserSerializer(required=True)
+
     class Meta:
         model = models.Profile
-        fields = ('user', 'name', 'email', 'gender', 'shoes_size')
-
-    def create(self, validated_data):
-        user_data = validated_data.pop('user')
-        phone_code0 = models.PhoneCode.objects.filter(phone=user_data['username'])
-        if phone_code0:  # Если существует этот телефон в проверочной базе
-            phone_code = models.PhoneCode.objects.get(phone=user_data['username'])
-            if phone_code.is_verified:  # Если телефон верифицирован в проверочной базе
-                user = UserSerializer.create(UserSerializer(), validated_data=user_data)
-                profile_one = models.Profile.objects.create(user=user)
-
-                for (key, value) in validated_data.items():
-                    setattr(profile_one, key, value)
-                profile_one.save()
-                phone_code.delete()
-                return profile_one
-
-        raise serializers.ValidationError("This phone is not verified")
+        fields = ('user', 'name', 'email', 'gender', 'shoes_size', 'dislikes', 'likes', 'saw', 'bought', 'favourite')
 
     def update(self, instance, validated_data):
 
@@ -80,15 +65,23 @@ class ProfileSerializer(serializers.ModelSerializer):
             if key == 'user':
                 user_data = validated_data.get('user')
                 if user_data.get('username'):
+                    username = user_data['username']
                     phone_code0 = models.PhoneCode.objects.filter(phone=user_data['username'])
                     if phone_code0:  # Если существует этот телефон в проверочной базе
                         phone_code = models.PhoneCode.objects.get(phone=user_data['username'])
                         if phone_code.is_verified:  # Если телефон верифицирован в проверочной базе
-                            instance.user = UserSerializer.update(UserSerializer(), instance.user, validated_data=value)
+                            if models.User.objects.filter(username=username):
+                                if int(username) == int(instance.user.username):
+                                    phone_code.delete()
+                                else:
+                                    phone_code.delete()
+                                    raise serializers.ValidationError("This phone is already used")
+                            else:
+                                instance.user = UserSerializer.update(UserSerializer(), instance.user, validated_data=value)
                         else:
                             raise serializers.ValidationError("This phone is not verified")
                     else:
-                        raise serializers.ValidationError("This phone is not verified")
+                        raise serializers.ValidationError("Sms doesn't send to this phone")
                 else:
                     instance.user = UserSerializer.update(UserSerializer(), instance.user, validated_data=value)
             else:
@@ -101,7 +94,6 @@ class ProfileSerializer(serializers.ModelSerializer):
 class PhoneCodeSerializer(serializers.ModelSerializer):
     phone = serializers.IntegerField(min_value=70000000000, max_value=79999999999, required=True)
     code = serializers.IntegerField(min_value=0, max_value=9999, required=False)
-    is_verified = serializers.BooleanField(required=False)
 
     def create(self, validated_data):
         valid_phone = models.PhoneCode.objects.filter(phone=validated_data['phone'])
@@ -119,7 +111,7 @@ class PhoneCodeSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.PhoneCode
-        fields = ('phone', 'code', 'is_verified')
+        fields = ('phone', 'code')
 
 
 class ShoesSerializer(serializers.ModelSerializer):
@@ -160,6 +152,36 @@ class FilterSerializer(serializers.Serializer):
         subcategory = serializers.ListField(
             child=serializers.ChoiceField(subcategory_CHOICES)
         )
+        
+    class TopMaterialFilterSerializer(serializers.Serializer):
+        top_material_CHOICES = models.ShoesItem.top_material_CHOICES
+        top_material = serializers.ListField(
+            child=serializers.ChoiceField(top_material_CHOICES)
+        )
+
+    class InsideMaterialFilterSerializer(serializers.Serializer):
+        inside_material_CHOICES = models.ShoesItem.inside_material_CHOICES
+        inside_material = serializers.ListField(
+            child=serializers.ChoiceField(inside_material_CHOICES)
+        )
+        
+    class BottomMaterialFilterSerializer(serializers.Serializer):
+        bottom_material_CHOICES = models.ShoesItem.bottom_material_CHOICES
+        bottom_material = serializers.ListField(
+            child=serializers.ChoiceField(bottom_material_CHOICES)
+        )
+        
+    class StepMaterialFilterSerializer(serializers.Serializer):
+        step_material_CHOICES = models.ShoesItem.step_material_CHOICES
+        step_material = serializers.ListField(
+            child=serializers.ChoiceField(step_material_CHOICES)
+        )
+
+    class CountryFilterSerializer(serializers.Serializer):
+        country_CHOICES = models.ShoesItem.country_CHOICES
+        country = serializers.ListField(
+            child=serializers.ChoiceField(country_CHOICES)
+        )
 
     class SeasonFilterSerializer(serializers.Serializer):
         season_CHOICES = models.ShoesItem.season_CHOICES
@@ -173,17 +195,36 @@ class FilterSerializer(serializers.Serializer):
             child=serializers.ChoiceField(color_CHOICES)
         )
 
+    class ZipTypeFilterSerializer(serializers.Serializer):
+        zip_type_CHOICES = models.ShoesItem.zip_type_CHOICES
+        zip_type = serializers.ListField(
+            child=serializers.ChoiceField(zip_type_CHOICES)
+        )
+
+    class SportTypeFilterSerializer(serializers.Serializer):
+        sport_type_CHOICES = models.ShoesItem.sport_type_CHOICES
+        sport_type = serializers.ListField(
+            child=serializers.ChoiceField(sport_type_CHOICES)
+        )
+
     class PriceFilterSerializer(serializers.Serializer):
         start_price = serializers.IntegerField()
         end_price = serializers.IntegerField()
 
-
-    price_filter = PriceFilterSerializer(required=False)
     brand_filter = BrandFilterSerializer(required=False)
-    color_filter = ColorFilterSerializer(required=False)
     subcategory_filter = SubcategoryFilterSerializer(required=False)
     subsubcategory_filter = SubsubcategoryFilterSerializer(required=False)
     season_filter = SeasonFilterSerializer(required=False)
+    top_material_filter = TopMaterialFilterSerializer(required=False)
+    inside_material_filter = InsideMaterialFilterSerializer(required=False)
+    bottom_material_filter = BottomMaterialFilterSerializer(required=False)
+    step_material_filter = StepMaterialFilterSerializer(required=False)
+    country_filter = CountryFilterSerializer(required=False)
+    color_filter = ColorFilterSerializer(required=False)
+    zip_type_filter = ZipTypeFilterSerializer(required=False)
+    sport_type_filter = SportTypeFilterSerializer(required=False)
+    price_filter = PriceFilterSerializer(required=False)
+
 
 
 class SortSerializer(serializers.Serializer):

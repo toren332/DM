@@ -3,19 +3,22 @@ from django.contrib.auth.models import User
 from django.core.validators import MaxValueValidator, MinValueValidator
 
 
+
+
 class ShoesItem(models.Model):
     url = models.CharField(max_length=500, unique=True)
     name = models.CharField(max_length=500, unique=True)
     brand = models.CharField(max_length=150, unique=False)
     gender_CHOICES = (
         ('male', 'MALE'),
-        ('female', 'FEMALE')
+        ('female', 'FEMALE'),
+        ('unisex', 'UNISEX'),
     )
-    gender = models.CharField(max_length=10, choices=gender_CHOICES)
+    gender = models.CharField(max_length=100, choices=gender_CHOICES)
     category_CHOICES = (
         ('shoes', 'SHOES'),
     )
-    category = models.CharField(max_length=100, choices=category_CHOICES)
+    category = models.CharField(max_length=100, choices=category_CHOICES, blank=True)
     subsubcategory_CHOICES = [
         ('classic',
          (
@@ -147,7 +150,7 @@ class ShoesItem(models.Model):
         ('multi', 'MULTI')
     )
 
-    season = models.CharField(max_length=100, choices=season_CHOICES)
+    season = models.CharField(max_length=100, choices=season_CHOICES, blank=True)
     color_CHOICES = (
         ('black', 'BLACK'),
         ('brown', 'BROWN'),
@@ -163,7 +166,7 @@ class ShoesItem(models.Model):
         ('yellow', 'YELLOW'),
         ('orange', 'ORANGE'),
     )
-    color = models.CharField(max_length=100, choices=color_CHOICES)
+    color = models.CharField(max_length=100, choices=color_CHOICES, blank=True)
     zip_type_CHOICES = (
         ('shnirky', 'SHNURKY'),
         ('lipuchky', 'LIPUCHKY'),
@@ -184,10 +187,10 @@ class ShoesItem(models.Model):
     sport_type = models.CharField(max_length=100, blank=True, choices=sport_type_CHOICES)
 
     image_main = models.URLField()
-    image_1 = models.URLField()
-    image_2 = models.URLField()
-    image_3 = models.URLField()
-    image_4 = models.URLField()
+    image_1 = models.URLField(blank=True)
+    image_2 = models.URLField(blank=True)
+    image_3 = models.URLField(blank=True)
+    image_4 = models.URLField(blank=True)
     size36_qua = models.IntegerField(default=0)
     size365_qua = models.IntegerField(default=0)
     size37_qua = models.IntegerField(default=0)
@@ -219,12 +222,10 @@ class ShoesItem(models.Model):
             'inside_material': self.inside_material,
             'bottom_material': self.bottom_material,
             'step_material': self.step_material,
-            'height': self.height,
             'country': self.country,
             'season': self.season,
             'color': self.color,
             'zip_type': self.zip_type,
-            'furniture_color': self.furniture_color,
             'sport_type': self.sport_type,
         }
 
@@ -232,8 +233,8 @@ class ShoesItem(models.Model):
 class Profile(models.Model):
     """Профиль пользователя."""
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
-    name = models.CharField(max_length=150)
-    email = models.EmailField(blank=True, null=True)
+    name = models.CharField(max_length=150, blank=True)
+    email = models.EmailField(blank=True)
     gender_CHOICES = (
         ('male', 'MALE'),
         ('female', 'FEMALE')
@@ -262,9 +263,9 @@ class Profile(models.Model):
         ('46', '46'),
         ('46.5', '46.5'),
     )
-    gender = models.CharField(max_length=10, choices=gender_CHOICES)
+    gender = models.CharField(max_length=10, choices=gender_CHOICES, blank=True)
 
-    shoes_size = models.CharField(max_length=4, choices=size_CHOICES)
+    shoes_size = models.CharField(max_length=4, choices=size_CHOICES, blank=True)
 
     dislikes = models.ManyToManyField(ShoesItem, related_name='dislikes', blank=True)
     likes = models.ManyToManyField(ShoesItem, related_name='likes', blank=True)
@@ -275,6 +276,9 @@ class Profile(models.Model):
     def delete(self, *args, **kwargs):
         self.user.delete()
         return super(self.__class__, self).delete(*args, **kwargs)
+
+    def __str__(self):
+        return 'Phone: ' + str(self.user.username) + ';'
 
 
 class PhoneCode(models.Model):
