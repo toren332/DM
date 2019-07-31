@@ -53,13 +53,11 @@ def filter_and_sort(data, queryset, profile):
 
     if data.get('filter'):
         filters = data['filter']
-
         if filters.get('brand_filter'):
             new_queryset = queryset.filter(brand=filters['brand_filter']['brand'][0])
             for brand in filters['brand_filter']['brand']:
                 new_queryset = new_queryset.union(queryset.filter(brand=brand))
             queryset = new_queryset
-
         if filters.get('subcategory_filter'):
             if filters.get('subsubcategory_filter'):
                 return {'ERROR': 'Please, choose subsubcategory OR subcategory'}, False
@@ -83,37 +81,31 @@ def filter_and_sort(data, queryset, profile):
             for subsubcategory in filters['subsubcategory_filter']['subsubcategory']:
                 new_queryset = new_queryset.union(queryset.filter(subsubcategory=subsubcategory))
             queryset = new_queryset
-            
         if filters.get('top_material_filter'):
             new_queryset = queryset.filter(top_material=filters['top_material_filter']['top_material'][0])
             for top_material in filters['top_material_filter']['top_material']:
                 new_queryset = new_queryset.union(queryset.filter(top_material=top_material))
             queryset = new_queryset
-            
         if filters.get('inside_material_filter'):
             new_queryset = queryset.filter(inside_material=filters['inside_material_filter']['inside_material'][0])
             for inside_material in filters['inside_material_filter']['inside_material']:
                 new_queryset = new_queryset.union(queryset.filter(inside_material=inside_material))
             queryset = new_queryset
-            
         if filters.get('bottom_material_filter'):
             new_queryset = queryset.filter(bottom_material=filters['bottom_material_filter']['bottom_material'][0])
             for bottom_material in filters['bottom_material_filter']['bottom_material']:
                 new_queryset = new_queryset.union(queryset.filter(bottom_material=bottom_material))
             queryset = new_queryset
-            
         if filters.get('step_material_filter'):
             new_queryset = queryset.filter(step_material=filters['step_material_filter']['step_material'][0])
             for step_material in filters['step_material_filter']['step_material']:
                 new_queryset = new_queryset.union(queryset.filter(step_material=step_material))
             queryset = new_queryset
-        
         if filters.get('country_filter'):
             new_queryset = queryset.filter(country=filters['country_filter']['country'][0])
             for country in filters['country_filter']['country']:
                 new_queryset = new_queryset.union(queryset.filter(country=country))
             queryset = new_queryset
-        
         if filters.get('season_filter'):
             new_queryset = queryset.filter(season=filters['season_filter']['season'][0])
             for season in filters['season_filter']['season']:

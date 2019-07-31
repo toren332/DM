@@ -2,10 +2,10 @@ from registration import models
 import random
 
 def create_random_table():
-    for i in range(1000):
+    for i in range(5000):
         url = 'http://ya.ru/url_is/' + str(i)
         name = 'name ' + str(i)
-        brand = 'BRAND'+str(i//10)
+        brand = 'BRAND'+str(i//1000)
         gender = random.choice(models.ShoesItem.gender_CHOICES)[0]
         category = random.choice(models.ShoesItem.category_CHOICES)[0]
         subsubcategory = random.choice(random.choice(models.ShoesItem.subsubcategory_CHOICES)[1])[0]

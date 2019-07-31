@@ -282,7 +282,7 @@ class Profile(models.Model):
 
 
 class PhoneCode(models.Model):
-    phone = models.PositiveIntegerField(validators=[MinValueValidator(70000000000), MaxValueValidator(79999999999)],
+    phone = models.BigIntegerField(validators=[MinValueValidator(70000000000), MaxValueValidator(79999999999)],
                                         unique=True)
     code = models.PositiveIntegerField(validators=[MinValueValidator(1000), MaxValueValidator(9999)])
     is_verified = models.BooleanField(default=False)

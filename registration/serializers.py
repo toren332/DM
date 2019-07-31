@@ -226,7 +226,6 @@ class FilterSerializer(serializers.Serializer):
     price_filter = PriceFilterSerializer(required=False)
 
 
-
 class SortSerializer(serializers.Serializer):
     price_CHOICES = (
         ('to_cheap', 'TO_CHEAP'),

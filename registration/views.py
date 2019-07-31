@@ -16,16 +16,7 @@ from ML.create_table import create_random_table
 from rest_framework.pagination import PageNumberPagination
 
 
-class LargeResultsSetPagination(PageNumberPagination):
-    page_size = 1000
-    page_size_query_param = 'page_size'
-    max_page_size = 10000
 
-
-class StandardResultsSetPagination(PageNumberPagination):
-    page_size = 100
-    page_size_query_param = 'page_size'
-    max_page_size = 1000
 
 
 class Profiles(viewsets.GenericViewSet):
@@ -35,7 +26,7 @@ class Profiles(viewsets.GenericViewSet):
 
     @action(detail=False, methods=['GET', 'PATCH',])
     def me(self, request):
-        if request.method != 'GET':
+        if request.method == 'PATCH':
             data = request.data
             user = request.user
             profile = models.Profile.objects.get(user=user)
